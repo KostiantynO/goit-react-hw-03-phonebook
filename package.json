@@ -44,6 +44,8 @@
     "nanoid": "^3.2.0",
     "prettier": "^2.5.1",
     "prop-types": "^15.8.1",
+    "react-icons": "^4.3.1",
+    "react-toastify": "^8.1.0",
     "styled-components": "^5.3.3"
   },
   "lint-staged": {

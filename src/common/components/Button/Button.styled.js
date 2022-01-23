@@ -30,11 +30,7 @@ export const ButtonStyled = styled.button.attrs(({ type, display }) => ({
   }
 `;
 
-ButtonStyled.propTypes = {
-  type: PropTypes.string,
-  display: PropTypes.string,
-};
-
 export const ClearFilterButtonStyled = styled(ButtonStyled)`
   align-self: flex-end;
+  color: ${({ theme }) => theme.colors.white};
 `;

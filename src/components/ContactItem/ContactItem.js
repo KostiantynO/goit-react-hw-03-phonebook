@@ -1,6 +1,8 @@
 import { PropTypes } from 'common';
 import { ContactItemStyled, DeleteContactBtn } from './ContactItem.styled';
 
+import { AiOutlineClose } from 'react-icons/ai';
+
 export const ContactItem = ({
   contact: { id, name, number },
   onDeleteContact,
@@ -8,7 +10,7 @@ export const ContactItem = ({
   <ContactItemStyled>
     <span>{name}</span>&nbsp;<span>{number}</span>
     <DeleteContactBtn onClick={() => onDeleteContact(id)} display="if" round>
-      X
+      <AiOutlineClose />
     </DeleteContactBtn>
   </ContactItemStyled>
 );

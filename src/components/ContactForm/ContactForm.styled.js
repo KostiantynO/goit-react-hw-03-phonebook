@@ -5,7 +5,7 @@ export const ContactFormStyled = styled.form`
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(4)};
 
-  max-width: ${({ theme }) => theme.spacing(120)};
+  max-width: ${({ theme }) => theme.spacing(80)};
   padding: ${({ theme }) => theme.spacing(6)};
   margin: 0 auto;
 

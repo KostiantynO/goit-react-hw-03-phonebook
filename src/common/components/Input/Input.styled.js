@@ -1,8 +1,6 @@
 import { styled } from 'common';
 
 export const InputStyled = styled.input`
-  flex-shrink: 1;
-  flex-grow: 1;
-  font-size: clamp(1rem, 2.1vw, 1.5rem);
+  font-size: clamp(1.5rem, 3vw, 2rem);
   width: 100%;
 `;
