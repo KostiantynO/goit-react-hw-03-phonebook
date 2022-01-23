@@ -10,5 +10,4 @@ export const Label = ({ label, children, ...props }) => (
 
 Label.propTypes = {
   label: PropTypes.string,
-  type: PropTypes.string,
 };

@@ -15,8 +15,6 @@ export const ContactItemStyled = styled.li`
   border-radius: ${({ theme }) => theme.spacing(1)};
   outline: 1px solid ${({ theme }) => theme.colors.black};
 
-  width: 100%;
-
   ${({ theme }) => theme.transition('border-color, transform')}
 
   @media screen and (min-width: 768px) {
@@ -76,7 +74,21 @@ export const DeleteContactBtn = styled(ButtonStyled)`
   position: absolute;
   top: -${({ theme }) => theme.spacing(3)};
   right: -${({ theme }) => theme.spacing(2)};
-  z-index: ${({ theme }) => theme.zIndex('DeleteTodoBtn'.toLowerCase())};
+  z-index: ${({ theme }) => theme.zIndex('DeleteContactBtn'.toLowerCase())};
 
-  padding: clamp(2px, 2.1vw, 4px) clamp(4px, 2.1vw, 8px);
+  padding: clamp(2px, 2.1vw, 4px);
+
+  svg {
+    width: clamp(16px, 3vw, 21px);
+    height: clamp(16px, 3vw, 21px);
+    color: #fff;
+    opacity: 0.8;
+
+    ${({ theme }) => theme.transition('opacity')}
+  }
+
+  &:focus svg,
+  &:hover svg {
+    opacity: 1;
+  }
 `;

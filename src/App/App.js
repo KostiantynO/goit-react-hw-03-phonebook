@@ -1,7 +1,9 @@
 import { Component, nanoid, Section } from 'common';
 import { ContactForm, ContactList, Filter } from 'components';
+import { toast, ToastContainer } from 'react-toastify';
 import { load, save } from 'storage';
 
+import 'react-toastify/dist/ReactToastify.css';
 import { AppStyled } from './App.styled';
 
 const INITIAL_STATE = Object.freeze({
@@ -36,7 +38,7 @@ export default class App extends Component {
 
   getVisibleContacts = () => {
     const { contacts, filter } = this.state;
-    console.log('App ~ contacts', contacts);
+
     const normalizedFilter = filter.toLowerCase();
 
     if (contacts?.length > 0) {
@@ -57,7 +59,7 @@ export default class App extends Component {
     );
 
     if (contact) {
-      alert(`${contact.name} is already in the contacts`);
+      toast.error(`${contact.name} is already in the contacts`);
       return true;
     }
   };
@@ -65,9 +67,9 @@ export default class App extends Component {
   addContact = ({ name, number }) => {
     if (this.isSaved(name)) return;
 
-    const contact = { id: nanoid(), name, number };
+    const newContact = { id: nanoid(), name, number };
     this.setState(prevState => ({
-      contacts: [contact, ...prevState.contacts],
+      contacts: [newContact, ...prevState.contacts],
     }));
   };
 
@@ -80,7 +82,6 @@ export default class App extends Component {
   render() {
     const { filter } = this.state;
     const contacts = this.getVisibleContacts();
-    console.log('App ~ render ~ contacts', contacts);
 
     return (
       <AppStyled>
@@ -100,6 +101,8 @@ export default class App extends Component {
             onDeleteContact={this.deleteContact}
           />
         </Section>
+
+        <ToastContainer />
       </AppStyled>
     );
   }

@@ -8,6 +8,8 @@ export const SectionTitleStyled = styled(CustomTitle)`
   transform: translateX(50%);
   color: ${({ theme }) => theme.colors.lightTeal};
 
+  max-width: 400px;
+
   ${({ theme }) => theme.transition('transform')}
 
   > span {
