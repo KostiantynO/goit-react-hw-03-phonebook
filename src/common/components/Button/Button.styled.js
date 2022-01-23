@@ -1,4 +1,4 @@
-import { styled, PropTypes } from 'common';
+import { styled } from 'common';
 
 export const ButtonStyled = styled.button.attrs(({ type, display }) => ({
   type: type === 'submit' ? type : 'button',
