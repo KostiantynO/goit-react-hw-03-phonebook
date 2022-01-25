@@ -49,9 +49,7 @@
     "styled-components": "^5.3.3"
   },
   "lint-staged": {
-    "*.{js,jsx}": "eslint --cache --fix",
     "*.{js,jsx,css,sass,md}": "prettier --write",
-    "*.js": "eslint --cache --fix",
     "*.{js,css,md}": "prettier --write"
   }
 }
